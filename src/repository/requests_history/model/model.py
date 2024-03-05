@@ -1,0 +1,10 @@
+REQUEST_HISTORY_TABLE = "requests_history"
+
+ID_COLUMN = "id"
+CITY_NAME_COLUMN = "city_name"
+WEATHER_CONDITIONS_COLUMN = "weather_conditions"
+TEMPERATURE_COLUMN = "temperature"
+FEELS_LIKE_COLUMN = "feels_like"
+WIND_SPEED_COLUMN = "wind_speed"
+TIME_COLUMN = "time"
+TIMEZONE_COLUMN = "timezone"

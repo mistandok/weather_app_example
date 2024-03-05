@@ -1,0 +1,23 @@
+version: '3'
+
+volumes:
+  postgres_volume:
+
+services:
+  weather-db:
+    image: postgres:14.0
+    env_file:
+      - ./deploy/env/.env.prod
+    volumes:
+      - postgres_volume:/var/lib/postgresql/data
+    ports:
+      - "${PG_PORT}:${PG_PORT}"
+    command: -p ${PG_PORT}
+
+  migrator:
+    build:
+      dockerfile: migrator.Dockerfile
+    env_file:
+      - ./deploy/env/.env.prod
+    depends_on:
+      - weather-db
