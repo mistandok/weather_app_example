@@ -35,3 +35,13 @@ class Weather:
     @property
     def datetime(self):
         return self._time_with_tz
+
+    def __repr__(self):
+        return f"""
+            Город: {self.city_name},
+            Погодные условия: {self.weather_conditions.value},
+            Температура: {self.temperature} °C,
+            Ощущается как: {self.feels_like} °C,
+            Скорость ветра: {self.wind_speed} м/с,
+            На время: {self.datetime}
+        """

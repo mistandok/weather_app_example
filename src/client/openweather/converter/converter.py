@@ -1,4 +1,4 @@
-from src.model.weather import Weather, WeatherConditions
+from src.service.model.weather import Weather, WeatherConditions
 
 
 def from_response_to_service_weather(response: dict[str, any]) -> Weather:

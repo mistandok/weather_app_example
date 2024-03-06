@@ -1,8 +1,8 @@
 from typing import Protocol
 
-from src.model.weather import Weather
+from src.service.model.weather import Weather
 
 
-class WeatherSearcher(Protocol):
+class WeatherClientProtocol(Protocol):
     def get_weather_for_city(self, city: str) -> Weather:
         pass
