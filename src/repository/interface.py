@@ -4,15 +4,17 @@ from psycopg2._psycopg import connection
 
 from src.service.model.weather import Weather
 
+type SupportedDBClient = connection
+
 
 class RequestsHistoryRepoProtocol(Protocol):
-    def save(self, conn: connection, weather: Weather):
+    def save(self, conn: SupportedDBClient, weather: Weather):
         pass
 
-    def get_history(self, conn: connection, last_n: int) -> list[Weather]:
+    def get_history(self, conn: SupportedDBClient, last_n: int) -> list[Weather]:
         pass
 
 
 class CityLogRepoProtocol(Protocol):
-    def save(self, conn: connection, city: str):
+    def save(self, conn: SupportedDBClient, city: str):
         pass
